@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f5"><meta name="description" content="Luxeora store management dashboard.">
+  <title>Store Management — Luxeora</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <aside class="admin-sidebar" id="admin-sidebar" aria-label="Dashboard navigation">
+      <a href="index.html" class="admin-brand" aria-label="Luxeora home"><span class="admin-brand-mark">L</span><span>LUXEORA<small>STORE ADMIN</small></span></a>
+      <div class="sidebar-caption">WORKSPACE</div>
+      <nav class="side-links" aria-label="Store sections">
+        <a href="#home" class="side-link is-active" data-page="Home" aria-current="page"><span class="side-icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg></span><span>Home</span></a>
+        <a href="#orders" class="side-link" data-page="Orders"><span class="side-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14l1 17H4L5 4Z"/><path d="M9 8a3 3 0 0 0 6 0"/></svg></span><span>Orders</span></a>
+        <a href="#products" class="side-link" data-page="Products"><span class="side-icon"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg></span><span>Products</span></a>
+        <a href="#customers" class="side-link" data-page="Customers"><span class="side-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.4-3.4 2.6-5.2 6.5-5.2s6.1 1.8 6.5 5.2M16 5.3a3.5 3.5 0 0 1 0 6.8m2 3c2.2.8 3.4 2.4 3.7 4.9"/></svg></span><span>Customers</span></a>
+        <a href="#categories" class="side-link" data-page="Categories"><span class="side-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span><span>Categories</span></a>
+        <a href="#inventory" class="side-link" data-page="Inventory"><span class="side-icon"><svg viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="m3.5 7.8 8.5 4.4 8.5-4.4M12 12.5V21"/></svg></span><span>Inventory</span></a>
+        <a href="#analytics" class="side-link" data-page="Analytics"><span class="side-icon"><svg viewBox="0 0 24 24"><path d="M4 20V11m5 9V5m6 15v-7m5 7V3"/></svg></span><span>Analytics</span></a>
+        <a href="#settings" class="side-link" data-page="Settings"><span class="side-icon"><svg viewBox="0 0 24 24"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/><path d="m19.4 15 .1.1 1.2 1-1.6 2.8-1.5-.6a7.7 7.7 0 0 1-1.7 1l-.3 1.6h-3.2l-.3-1.6a7.7 7.7 0 0 1-1.7-1l-1.5.6-1.6-2.8 1.2-1a7.2 7.2 0 0 1 0-2l-1.2-1 1.6-2.8 1.5.6a7.7 7.7 0 0 1 1.7-1l.3-1.6h3.2l.3 1.6a7.7 7.7 0 0 1 1.7 1l1.5-.6 1.6 2.8-1.2 1a7.2 7.2 0 0 1 0 2Z" transform="translate(-1 -1)"/></svg></span><span>Settings</span></a>
+      </nav>
+      <div class="sidebar-bottom"><div class="sidebar-store"><span class="store-avatar">L</span><span><b>Luxeora Boutique</b><small>Online store</small></span><span class="online-dot" aria-label="Online"></span></div><a href="index.html" class="view-store"><span>↗</span> View storefront</a></div>
+    </aside>
+    <button class="sidebar-scrim" aria-label="Close navigation drawer" tabindex="-1"></button>
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="mobile-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="admin-sidebar"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <nav class="top-links" aria-label="Main navigation"><a href="#home" class="top-link active" data-page="Home">Home</a><a href="#customers" class="top-link" data-page="Customers">Customers</a>
+          <div class="top-dropdown-wrap"><button class="top-link dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="store-menu">Store Management <svg class="chevron" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></button><div class="top-dropdown" id="store-menu" role="menu" hidden><div class="dropdown-label">STORE MANAGEMENT</div><a role="menuitem" href="#store-settings" data-page="Store Settings">Store Settings</a><a role="menuitem" href="#shipping" data-page="Shipping">Shipping</a><a role="menuitem" href="#payments" data-page="Payments">Payments</a><a role="menuitem" href="#taxes" data-page="Taxes">Taxes</a></div></div>
+        </nav>
+        <a class="upgrade-link" href="#upgrade"><span class="upgrade-star">✦</span> Upgrade account <span class="upgrade-arrow">↗</span></a>
+        <div class="top-actions" aria-label="Quick actions">
+          <button class="icon-button" data-panel="search" aria-label="Search" aria-expanded="false"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+          <button class="icon-button has-dot" data-panel="messages" aria-label="Messages, 2 unread" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5 8 8 0 0 1-3.6-.8L4 20l1.7-4A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></button>
+          <button class="icon-button" data-panel="calendar" aria-label="Calendar" aria-expanded="false"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M7.5 3v4M16.5 3v4M4 9.5h16M8 13h2m4 0h2m-8 4h2"/></svg></button>
+          <button class="icon-button has-dot" data-panel="notifications" aria-label="Notifications, 1 unread" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></button>
+          <div class="profile-wrap"><button class="profile-trigger" aria-label="Open account menu" aria-expanded="false" aria-haspopup="true" aria-controls="profile-menu"><span class="profile-avatar" aria-hidden="true">A</span><span class="profile-name">Amara Diallo</span><svg class="chevron" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></button>
+            <section class="profile-menu" id="profile-menu" aria-label="Account menu" hidden>
+              <div class="profile-summary"><span class="profile-avatar profile-avatar-large" aria-hidden="true">A</span><div><strong>Amara Diallo</strong><small>amara@luxeora.example</small><a href="#profile" data-page="View profile">View profile <span>↗</span></a></div></div>
+              <div class="menu-divider"></div><nav class="account-links" aria-label="Account options"><a href="#updates" data-page="Last updates"><span class="menu-icon">◷</span>Last updates</a><a href="#help" data-page="Get help"><span class="menu-icon">?</span>Get help</a><a href="#help-center" data-page="Help center"><span class="menu-icon">⌂</span>Help center</a><a href="#shortcuts" data-page="Shortcuts"><span class="menu-icon">⌘</span>Shortcuts</a><a href="#feedback" data-page="Send feedback"><span class="menu-icon">✎</span>Send feedback</a><a href="#privacy" data-page="Privacy policy"><span class="menu-icon">◇</span>Privacy policy</a></nav>
+              <div class="menu-divider logout-divider"></div><button class="logout-button"><span class="menu-icon"><svg viewBox="0 0 24 24"><path d="M10 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5M14 16l4-4-4-4m4 4H9"/></svg></span>Close session</button>
+            </section>
+          </div>
+        </div>
+        <div class="action-panel" id="action-panel" hidden></div>
+      </header>
+      <main class="dashboard-content" id="dashboard-content" tabindex="-1">
+        <div class="page-breadcrumb"><span>Workspace</span><span class="breadcrumb-slash">/</span><b id="current-page">Home</b></div>
+        <div class="page-heading"><div><p class="eyebrow">MONDAY, NOVEMBER 23, 2026</p><h1 id="page-title">Welcome back, Amara</h1><p class="page-subtitle" id="page-subtitle">Here’s what’s happening with your store today.</p></div><a class="button-dark" href="index.html">View storefront <span>↗</span></a></div>
+        <div class="dashboard-divider"></div>
+        <div class="welcome-panel"><span class="welcome-mark">L</span><div><p class="eyebrow">YOUR STORE, AT A GLANCE</p><h2>Everything in its place.</h2><p>Use the navigation to manage your orders, products, customers and store settings.</p></div></div>
+      </main>
+      <footer class="admin-footer"><span>© 2026 Luxeora</span><span>Store management · <a href="index.html">View storefront ↗</a></span></footer>
+    </div>
+  </div>
+  <dialog class="confirm-dialog" id="logout-dialog" aria-labelledby="logout-title"><div class="confirm-mark">↗</div><h2 id="logout-title">Close your session?</h2><p>Authentication isn’t connected in this demo, so no session will be ended.</p><div class="dialog-actions"><button class="cancel-logout">Go back</button><button class="confirm-logout">Understood</button></div></dialog>
+  <div class="toast-message" role="status" aria-live="polite"></div>
+  <script src="admin.js"></script>
+</body>
+</html>
